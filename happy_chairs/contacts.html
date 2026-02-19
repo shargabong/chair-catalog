@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить стул в музей</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo-chair.jpg" alt="Золотой стул">
+            <h1>Стулья, на которых мы сидели</h1>
+            <span class="tagline">(и остались живы!)</span>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">🍑 Стулья</a></li>
+                <li><a href="about.html">📖 О чём это</a></li>
+                <li><a href="contacts.html">📬 Добавить стул</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>📝 Расскажи миру о своём стуле!</h2>
+            <p class="form-intro">Если у тебя тоже был стул, который выдержал твоего кота, твои танцы или просто простоял 20 лет — кинь его сюда! Сделаем музей стульев вместе 🪑</p>
+            <form class="chair-form">
+                <div class="form-group">
+                    <label for="name">Твоё имя (можно псевдоним, хоть "Грузный Григорий"):</label>
+                    <input type="text" id="name" name="name" placeholder="Например, Сидун Сидуныч" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (чтоб я прислал благодарственный мем):</label>
+                    <input type="email" id="email" name="email" placeholder="popa@stul.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="chair-type">Тип стула-героя:</label>
+                    <select id="chair-type" name="chair-type">
+                        <option value="">— Выбери категорию —</option>
+                        <option value="child">Детский (со следами каши)</option>
+                        <option value="school">Школьный (исписанный)</option>
+                        <option value="office">Офисный (сломанное колесо — норма)</option>
+                        <option value="taburet">Табурет (вечный)</option>
+                        <option value="bar">Барный (помнит похмелье)</option>
+                        <option value="other">Другой (экзотика)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Где и когда стул нёс службу?</label>
+                    <input type="text" id="location" name="location" placeholder="Например, Общага, комната 404, 2015–2020">
+                </div>
+                <div class="form-group">
+                    <label for="story">Самая эпичная история стула:</label>
+                    <textarea id="story" name="story" rows="4" placeholder="Как он выжил, когда ты на него встал, чтобы достать антресоль? Чем пахнет? Есть царапины от кота?" required></textarea>
+                </div>
+                <div class="form-group upload-hint">
+                    <label for="photo">📸 Фото стула (можно ссылку, если есть):</label>
+                    <input type="url" id="photo" name="photo" placeholder="https://... (необязательно)">
+                </div>
+                <button type="submit" class="btn">🪄 Увековечить стул</button>
+            </form>
+            <p class="form-note">*Нажимая кнопку, ты соглашаешься, что твой стул станет звездой интернета.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Каталог стульев, на которых мы сидели (и даже не упали)</p>
+            <p class="footer-quote">«Не выбрасывайте стулья — подарите им вечность в наших сердцах» 🪑✨</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,3 +1,4 @@
+/*сброс чтоб всё было ровно*/
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/*шрифты*/
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&family=Comfortaa:wght@400;700&display=swap');
 
 body {
@@ -56,6 +58,7 @@ a:hover {
     text-decoration: underline wavy #E0894D 1px;
 }
 
+/*шапка*/
 header {
     position: fixed;
     top: 0;
@@ -89,6 +92,7 @@ header {
     transform: rotate(15deg);
 }
 
+/*навигация*/
 .nav-menu {
     display: flex;
     list-style: none;
@@ -106,6 +110,22 @@ header {
     text-decoration: none;
 }
 
+/*избранное*/
+.favorites {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #FFC857;
+    padding: 0.4rem 0.8rem;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.favorites:hover {
+    background: #FFB347;
+}
+
+/*основа*/
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -121,6 +141,33 @@ section {
     border: 1px solid #FFE4C4;
 }
 
+/*фильтры*/
+.filters {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter-btn {
+    background: #eee;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.filter-btn.active {
+    background: #FFC857;
+    color: #000;
+}
+
+.filter-btn:hover {
+    background: #FFD9B0;
+}
+
+/*карточки*/
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -136,6 +183,7 @@ section {
     padding: 1.5rem;
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    position: relative;
 }
 
 .card:hover {
@@ -156,6 +204,7 @@ section {
 .card h3 {
     font-size: 1.5rem;
     color: #7B3F00;
+    margin-bottom: 0.3rem;
 }
 
 .location {
@@ -169,6 +218,45 @@ section {
     margin-bottom: 0.8rem;
 }
 
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.fav-btn {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fav-btn:hover {
+    transform: scale(1.2);
+}
+
+.fav-btn.favorite {
+    color: red;
+}
+
+.details-btn {
+    background: #FFC857;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.details-btn:hover {
+    background: #FFB347;
+    transform: scale(1.05);
+}
+
+/*таблица*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -201,14 +289,12 @@ td {
     margin-top: 0.3rem;
 }
 
+/*сетка*/
 .grid-places {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 25px;
     margin-top: 1rem;
-}
-
-.super-puper-grid {
 }
 
 .place-item {
@@ -250,6 +336,7 @@ td {
     font-size: 0.85rem;
 }
 
+/*форма*/
 .chair-form {
     max-width: 650px;
     margin: 0 auto;
@@ -318,6 +405,105 @@ td {
     margin-top: 0.5rem;
 }
 
+/*модальные*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close, .close-fav {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#favorites-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 15px 0;
+}
+
+.fav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #FFD9B0;
+}
+
+.fav-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.fav-item span {
+    flex: 1;
+}
+
+.remove-fav {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#clear-favorites {
+    background: #FFC857;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+
+#clear-favorites:hover {
+    background: #FFB347;
+}
+
+/*наверх*/
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #FFC857;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+#scroll-top:hover {
+    background: #FFB347;
+}
+
+/*подвал*/
 footer {
     background: #FFFAF0;
     padding: 2rem;
@@ -334,6 +520,7 @@ footer {
     color: #A1582B;
 }
 
+/*адаптивность*/
 @media (max-width: 768px) {
     body {
         padding-top: 200px;
@@ -368,6 +555,12 @@ footer {
         border-bottom: none;
     }
 
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .card {
         flex: 1 1 100%;
     }
@@ -398,5 +591,10 @@ footer {
     .btn {
         align-self: stretch;
         text-align: center;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
     }
 }

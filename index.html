@@ -20,6 +20,9 @@
                 <li><a href="contacts.html">📬 Добавить стул</a></li>
             </ul>
         </nav>
+        <div class="favorites">
+            🖤 <span id="favorites-count">0</span>
+        </div>
     </header>
 
     <main>
@@ -30,38 +33,15 @@
 
         <section class="catalog">
             <h2>🏆 Зал славы сидений</h2>
-            <div class="card-container">
-                <article class="card">
-                    <img src="images/child-chair.jpg" alt="Детский деревянный стул">
-                    <h3>Пенёк Петрович</h3>
-                    <p class="location">📍 Детсад «Колосок», 1998–2001</p>
-                    <p class="desc">Я на нём первый раз в садике кашу ел, вроде не плакал. Там царапина от машинки осталась, я её туда специально катал.</p>
-                </article>
-                <article class="card">
-                    <img src="images/school-chair.jpg" alt="Школьный стул">
-                    <h3>Скрипун Семён</h3>
-                    <p class="location">📍 Школа №5, кабинет алгебры, 2005–2013</p>
-                    <p class="desc">Этот стул реально бесил — скрипел на каждой контрольной. А на спинке кто-то написал «Диман». Диман, ты где теперь?</p>
-                </article>
-                <article class="card">
-                    <img src="images/office-chair.jpg" alt="Офисное кресло">
-                    <h3>Трупус Офисус</h3>
-                    <p class="location">📍 Офис «Рога и Копыта», 2018–2025</p>
-                    <p class="desc">Колесо отвалилось через месяц, мы его скотчем примотали — и норм, ещё 2 года проработало. Скотч рулит.</p>
-                </article>
-                <article class="card">
-                    <img src="images/taburet.jpg" alt="Дачная табуретка">
-                    <h3>Табурет Тихон</h3>
-                    <p class="location">📍 Дача, 1990 — наше время</p>
-                    <p class="desc">На нём бабушка чистила картошку, дед читал газету, а мы с друзьями на кухне сидели до утра. Шатается, но не сдаётся.</p>
-                </article>
-                <article class="card">
-                    <img src="images/bar-chair.jpg" alt="Барный стул">
-                    <h3>Борис Барный</h3>
-                    <p class="location">📍 Бар «У Гоши», 2020–2024</p>
-                    <p class="desc">Помнит, как мы после сессии отмечали, и как я там чуть не уснул. Следы от текилы наверное уже не оттереть.</p>
-                </article>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Все стулья</button>
+                <button class="filter-btn" data-filter="child">Детские</button>
+                <button class="filter-btn" data-filter="school">Школьные</button>
+                <button class="filter-btn" data-filter="office">Офисные</button>
+                <button class="filter-btn" data-filter="taburet">Табуретки</button>
+                <button class="filter-btn" data-filter="bar">Барные</button>
             </div>
+            <div class="card-container" id="card-container"></div>
         </section>
     </main>
 
@@ -71,5 +51,28 @@
             <p class="footer-quote">«Стулья не предают — они просто скрипят» 🪑❤️</p>
         </div>
     </footer>
+
+    <!-- Модальное окно деталей стула -->
+    <div id="chair-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <!-- Модальное окно избранного -->
+    <div id="favorites-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-fav">&times;</span>
+            <h2>Избранные стулья</h2>
+            <div id="favorites-list"></div>
+            <button id="clear-favorites">Очистить избранное</button>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scroll-top" title="Наверх">⬆️</button>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

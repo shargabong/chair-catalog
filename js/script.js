@@ -183,7 +183,7 @@ filterBtns.forEach(btn => {
     });
 });
 
-// открыть модалку избранного по клику на счётчик
+// открыть модалку избранного по клику на счетчик
 document.querySelector('.favorites').addEventListener('click', showFavoritesModal);
 
 closeBtn.addEventListener('click', () => {
